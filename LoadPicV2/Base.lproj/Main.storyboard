@@ -110,7 +110,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="cameraButton" destination="oIk-cH-0bd" id="chi-uK-QBS"/>
-                        <outlet property="imagePickView" destination="ZLG-cP-ZOb" id="FAM-C6-8oC"/>
+                        <outlet property="imagePickView" destination="ZLG-cP-ZOb" id="aLY-pp-NM7"/>
                         <outlet property="textFieldB" destination="qTi-Qc-qPq" id="Fjf-ah-r7e"/>
                         <outlet property="textFieldT" destination="J0G-x0-dJA" id="rlo-cF-VCD"/>
                     </connections>
