@@ -73,7 +73,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Camera"/>
                                 <connections>
-                                    <action selector="pickImageFromCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vm4-un-Gmi"/>
+                                    <action selector="pickImageFromCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DXR-xo-r9i"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qle-ze-RQI">
@@ -96,21 +96,20 @@
                             <constraint firstItem="qle-ze-RQI" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="77D-eM-nOJ"/>
                             <constraint firstAttribute="trailing" secondItem="J4v-Eb-aw1" secondAttribute="trailing" constant="40" id="DCD-yo-gZI"/>
                             <constraint firstItem="J4v-Eb-aw1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FgY-Jq-XWd"/>
-                            <constraint firstItem="qTi-Qc-qPq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MKk-n6-VYX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qTi-Qc-qPq" secondAttribute="trailing" constant="27" id="Ihw-gm-Za3"/>
                             <constraint firstItem="qle-ze-RQI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="MpP-xP-AnU"/>
-                            <constraint firstItem="J0G-x0-dJA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PfV-jl-QNn"/>
                             <constraint firstAttribute="bottomMargin" secondItem="6Nr-hJ-lZM" secondAttribute="bottom" id="RUF-OU-z3q"/>
+                            <constraint firstItem="qTi-Qc-qPq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="b6s-5D-YIt"/>
                             <constraint firstItem="J0G-x0-dJA" firstAttribute="trailing" secondItem="oIk-cH-0bd" secondAttribute="trailing" id="fdy-Oc-tP6"/>
                             <constraint firstItem="qTi-Qc-qPq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="100" id="fz9-JE-9t2"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="qTi-Qc-qPq" secondAttribute="trailing" constant="27" id="k8r-ol-DUA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="oIk-cH-0bd" secondAttribute="trailing" constant="18" id="mx8-XY-Qgw"/>
-                            <constraint firstItem="qTi-Qc-qPq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="sp4-Ij-IVc"/>
                             <constraint firstItem="J0G-x0-dJA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="zPX-w0-FpT"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="cameraButton" destination="oIk-cH-0bd" id="chi-uK-QBS"/>
                         <outlet property="imagePickView" destination="ZLG-cP-ZOb" id="FAM-C6-8oC"/>
                         <outlet property="textFieldB" destination="qTi-Qc-qPq" id="Fjf-ah-r7e"/>
                         <outlet property="textFieldT" destination="J0G-x0-dJA" id="rlo-cF-VCD"/>

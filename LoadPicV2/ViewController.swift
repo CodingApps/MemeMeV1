@@ -14,6 +14,8 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     @IBOutlet weak var imagePickView: UIImageView!
     @IBOutlet weak var textFieldT : UITextField!
     @IBOutlet weak var textFieldB : UITextField!
+    @IBOutlet weak var cameraButton: UIButton!
+    
     
     struct Meme {
         
@@ -45,8 +47,9 @@ let memeTextAttributes:[String:Any] = [
         textFieldB.delegate = self
         textFieldT.text = "TOP"
         textFieldB.text = "BOTTOM"
+        cameraButton.isEnabled = isCameraAccesible()
+        
         // Do any additional setup after loading the view, typically from a nib.
-            dismiss(animated: true, completion: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,24 +70,22 @@ let memeTextAttributes:[String:Any] = [
         }
     }
     
-    
     @IBAction func pickAnImageFromAlbum(_ sender: AnyObject) {
-        
-
+        self.showImagePicker(sourceType: .photoLibrary)
+    }
+    
+    @IBAction func pickImageFromCamera(_ sender: Any) {
+        self.showImagePicker(sourceType: .camera)
+    }
+    
+    private func showImagePicker(sourceType: UIImagePickerControllerSourceType) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-        imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        imagePicker.sourceType = sourceType
         present(imagePicker, animated: true, completion: nil)
-        
     }
     
-
-    @IBAction func pickImageFromCamera(_ sender: Any) {
-        let pickerController = UIImagePickerController()
-        pickerController.delegate = self
-        pickerController.sourceType = .camera
-        present(pickerController, animated: true, completion: nil)
-    }
+    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
     {
@@ -123,11 +124,19 @@ func saveMeme() {
    }
     
     
-@IBAction func share(_ sender:Any) {
+    @IBAction func share(_ sender:Any) {
         let memedImage = generateMemedImage()
         let activityView = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
+        
+        activityView.completionWithItemsHandler = {(activityType: UIActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) in
+            if completed || error == nil {
+                self.saveMeme()
+            }
+        }
+        
         present(activityView, animated:true, completion:nil)
     }
+    
     
     func subscribeToKeyboardNotifications() {
         
@@ -157,12 +166,8 @@ func saveMeme() {
         return true
     }
     
-//    @IBAction func pickAnImageFromCamera(_ sender: Any) {
-//
-//        let imagePicker = UIImagePickerController()
-//        imagePicker.delegate = self
-//        present(imagePicker, animated: true, completion: nil)
-//    }
-
+    private func isCameraAccesible() -> Bool {
+        return UIImagePickerController.isCameraDeviceAvailable(.front) || UIImagePickerController.isCameraDeviceAvailable(.rear)
+    }
 }
 

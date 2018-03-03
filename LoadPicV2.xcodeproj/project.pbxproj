@@ -302,6 +302,7 @@
 				D96FB9F3201D4D05000612D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
