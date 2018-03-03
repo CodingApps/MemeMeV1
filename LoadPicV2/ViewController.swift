@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate,
 UINavigationControllerDelegate, UITextFieldDelegate {
@@ -85,8 +86,6 @@ let memeTextAttributes:[String:Any] = [
         present(imagePicker, animated: true, completion: nil)
     }
     
-    
-    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
     {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage { imagePickView.image = image }
@@ -105,13 +104,27 @@ let memeTextAttributes:[String:Any] = [
         return keyboardSize.cgRectValue.height
     }
     
-    
-    func generateMemedImage() -> UIImage {
+    func generateMemedImage() -> UIImage? {
         
-        // Render view to an image
-        UIGraphicsBeginImageContext(self.view.frame.size)
-        view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
-        let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        let imageSize = AVMakeRect(aspectRatio: self.imagePickView.image!.size, insideRect: self.imagePickView.bounds).size
+        
+        let image = self.imagePickView.image!
+        
+        UIGraphicsBeginImageContextWithOptions(imageSize, false, 0)
+        
+        image.draw(in: CGRect(origin: CGPoint.zero, size: imageSize))
+        
+        let topTextPosition = CGPoint(x: 0, y: 2) // you have to decide what is the best position. This is just an example
+        
+        let bottomTextPosition = CGPoint(x: 0, y: 275) // you have to decide what is the best position. This is just an example
+        
+        let topRect = CGRect(origin: topTextPosition, size: imageSize)
+        self.textFieldT.text!.draw(in: topRect)
+        
+        let bottomRect = CGRect(origin: bottomTextPosition, size: imageSize)
+        self.textFieldB.text!.draw(in: bottomRect)
+        
+        let memedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
         return memedImage
