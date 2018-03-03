@@ -114,9 +114,9 @@ let memeTextAttributes:[String:Any] = [
         
         image.draw(in: CGRect(origin: CGPoint.zero, size: imageSize))
         
-        let topTextPosition = CGPoint(x: 0, y: 2) // you have to decide what is the best position. This is just an example
+        let topTextPosition = CGPoint(x: 0, y: 15) // you have to decide what is the best position. This is just an example
         
-        let bottomTextPosition = CGPoint(x: 0, y: 275) // you have to decide what is the best position. This is just an example
+        let bottomTextPosition = CGPoint(x: 0, y: 325) // you have to decide what is the best position. This is just an example
         
         let topRect = CGRect(origin: topTextPosition, size: imageSize)
         self.textFieldT.text!.draw(in: topRect)
