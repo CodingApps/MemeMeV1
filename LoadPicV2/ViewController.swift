@@ -26,31 +26,28 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         let memedImage: UIImage!
     }
 
-let memeTextAttributes:[String:Any] = [
-    NSStrokeColorAttributeName: UIColor.black,
-    NSForegroundColorAttributeName: UIColor.white,
-    NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 35)!,
-    NSStrokeWidthAttributeName: -3.0 ]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        textFieldT.defaultTextAttributes = memeTextAttributes
-        textFieldB.defaultTextAttributes =
-            memeTextAttributes
-        
-        textFieldT.backgroundColor = .clear
-        textFieldB.backgroundColor = .clear
-        textFieldT.textColor = .white
-        textFieldB.textColor = .white
-        textFieldT.textAlignment = .center
-        textFieldB.textAlignment = .center
-        textFieldT.delegate = self
-        textFieldB.delegate = self
-        textFieldT.text = "TOP"
-        textFieldB.text = "BOTTOM"
+        configure(textfield: textFieldT, withText: "TOP")
+        configure(textfield: textFieldB, withText: "BOTTOM")
         cameraButton.isEnabled = isCameraAccesible()
+
+    }
+    
+    func configure(textfield: UITextField, withText text: String) {
+        let memeTextAttributes:[String:Any] = [
+            NSStrokeColorAttributeName: UIColor.black,
+            NSForegroundColorAttributeName: UIColor.white,
+            NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 35)!,
+            NSStrokeWidthAttributeName: -3.0 ]
         
-        // Do any additional setup after loading the view, typically from a nib.
+        textfield.defaultTextAttributes = memeTextAttributes
+        textfield.backgroundColor = .clear
+        textfield.textColor = .white
+        textfield.textAlignment = .center
+        textfield.delegate = self
+        textfield.text = text
+  
     }
     
     override func viewWillAppear(_ animated: Bool) {
