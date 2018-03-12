@@ -15,9 +15,8 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     @IBOutlet weak var imagePickView: UIImageView!
     @IBOutlet weak var textFieldT : UITextField!
     @IBOutlet weak var textFieldB : UITextField!
-    @IBOutlet weak var cameraButton: UIButton!
-    
-    
+    @IBOutlet weak var cameraButton: UIBarButtonItem!
+
     struct Meme {
         
         var topTextField: String?
