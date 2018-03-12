@@ -30,7 +30,7 @@
                                     </imageView>
                                 </subviews>
                             </stackView>
-                            <textField clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J0G-x0-dJA">
+                            <textField clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J0G-x0-dJA">
                                 <rect key="frame" x="36" y="120" width="303" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -86,6 +86,7 @@
                             <constraint firstItem="J4v-Eb-aw1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FgY-Jq-XWd"/>
                             <constraint firstAttribute="trailing" secondItem="CGv-33-yCh" secondAttribute="trailing" id="Hh3-Vd-sjC"/>
                             <constraint firstItem="J0G-x0-dJA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="70" id="Hu5-Zz-aIs"/>
+                            <constraint firstItem="J0G-x0-dJA" firstAttribute="top" secondItem="CGv-33-yCh" secondAttribute="bottom" constant="56" id="LD0-e4-wXe"/>
                             <constraint firstItem="CGv-33-yCh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Pmf-Ie-4Uz"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qTi-Qc-qPq" secondAttribute="bottom" constant="169.5" id="RzO-JX-KL6"/>
                             <constraint firstItem="J0G-x0-dJA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="f6P-u8-imI"/>
