@@ -46,6 +46,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         textfield.textAlignment = .center
         textfield.delegate = self
         textfield.text = text
+        textfield.borderStyle = .none
   
     }
     
