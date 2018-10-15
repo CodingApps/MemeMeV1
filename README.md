@@ -19,7 +19,7 @@ This project allows you to select an image from your album, add text to it and s
 * Also allow cameera to take picture for meme.
 <br>
 
-## Methods on the Main Thread
+## Loading image data from device library
 
 This included using images from the device's storage, so it was interesting implementing methods for pulling up the device's album.
 
