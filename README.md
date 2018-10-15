@@ -21,7 +21,7 @@ This project allows you to select an image from your album, add text to it and s
 
 ## Methods on the Main Thread
 
-This included using images from the devices storage, so it was interesting implementing methods for pulling up the phone album.
+This included using images from the device's storage, so it was interesting implementing methods for pulling up the device's album.
 
 ``` swift
     @IBAction func pickAnImageFromAlbum(_ sender: AnyObject) {
