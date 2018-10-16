@@ -5,7 +5,7 @@
 
 ## Intro
 
-This project allows you to select an image from your album, add text to it and save it as meme. 
+This project allows you to select an image from your album, add text to it and save it as a meme. 
 
 <p align="center">
   <img alt="onthemap" title="onthemap" src="screenshots/mmv1.gif" width=300>
